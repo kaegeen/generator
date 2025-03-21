@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Content Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center h-screen justify-center">
+    <!-- Generator Section -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-lg">
+        <h1 class="text-2xl font-bold mb-4">AI Content Generator</h1>
+        <p class="mb-4">Enter a prompt and generate anything!</p>
+        <input id="userInput" type="text" placeholder="Enter a prompt..." class="p-2 text-black w-full rounded mb-4">
+        <button onclick="generateContent()" class="bg-blue-500 px-6 py-2 text-white rounded hover:bg-blue-700">Generate</button>
+        <div id="output" class="mt-4 text-lg font-semibold"></div>
+    </div>
+
+    <script>
+        function generateContent() {
+            const input = document.getElementById("userInput").value.trim();
+            if (!input) {
+                document.getElementById("output").innerText = "Please enter a prompt.";
+                return;
+            }
+            document.getElementById("output").innerText = `Generated content for: "${input}"`;
+        }
+    </script>
+</body>
+</html>
